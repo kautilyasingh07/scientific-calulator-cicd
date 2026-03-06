@@ -47,10 +47,30 @@ pipeline {
 
     post {
         success {
-            echo "Pipline Completed Successfully"
+            // echo "Pipline Completed Successfully"
+            emailext(
+                subject: "SUCCESS: ${env.JOB_NAME} BUILD #${env.BUILD_NUMBER}"
+                body:"""
+                    Build completed successfully.
+                    Job: ${env.JOB_NAME}
+                    Build Number: ${env.BUILD_NUMBER}
+                    Build URL: ${env.BUILD_URL}
+                    """,
+                    to: "kautilyasingh07@gmail.com"
+            )
         }
         failure {
-            echo "Pipline failed"
+            // echo "Pipline failed"
+            emailext(
+                subject: "FAILED: ${env.JOB_NAME} BUILD #${env.BUILD_NUMBER}"
+                body:"""
+                    Build failed.
+                    Job: ${env.JOB_NAME}
+                    Build Number: ${env.JOB_NUMBER}
+                    Chech logs: ${env.BUILD_URL}
+                    """,
+                    to: "kautilyasingh07@gmail.com"
+            )
         }
         always {
             cleanWs()
