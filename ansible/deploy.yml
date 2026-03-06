@@ -1,0 +1,21 @@
+---
+- name: Deploy Calculator App
+  host: localhost
+  become: yes
+
+  tasks:
+
+      - name: Pull latest Docker image
+        docker_image:
+            name: kautilyasingh/calculator-app
+            tag: latest
+            source: Pull
+
+      - name: Run calculator container
+        docker_container:
+            name: calculator-app
+            image: kautilyasingh/calculator-app:latest
+            state: started
+            recreate: yes
+            ports:
+              - "8081:8080"
