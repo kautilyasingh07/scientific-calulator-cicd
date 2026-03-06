@@ -67,7 +67,7 @@ pipeline {
                     Build failed.
                     Job: ${env.JOB_NAME}
                     Build Number: ${env.BUILD_NUMBER}
-                    Chech logs: ${env.BUILD_URL}
+                    Check logs: ${env.BUILD_URL}
                     """,
                     to: "kautilyasingh07@gmail.com"
             )
