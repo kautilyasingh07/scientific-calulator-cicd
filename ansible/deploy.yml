@@ -2,6 +2,8 @@
 - name: Deploy Calculator App
   hosts: servers
   become: yes
+  become_method: sudo   # Explicitly use sudo
+  become_user: root     # Run tasks as root
 
   tasks:
 
