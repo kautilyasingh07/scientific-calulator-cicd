@@ -19,7 +19,5 @@
             image: kautilyasingh/calculator-app:latest
             state: started
             recreate: yes
-            tty: true
-            stdin_open: true
-            ports:
+            published_ports:
               - "8081:8080"
