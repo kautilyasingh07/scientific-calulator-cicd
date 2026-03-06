@@ -19,5 +19,7 @@
             image: kautilyasingh/calculator-app:latest
             state: started
             recreate: yes
+            tty: yes
+            interactive: yes
             published_ports:
               - "8081:8080"
