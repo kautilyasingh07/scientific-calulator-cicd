@@ -1,4 +1,7 @@
 target/
+screenshots/
 .vscode/
 *.class
 ngrok-v3-stable-linux-amd64.tgz
+SPE_mini_project_report v.2.pdf
+SPE_mini_project_report.pdf
