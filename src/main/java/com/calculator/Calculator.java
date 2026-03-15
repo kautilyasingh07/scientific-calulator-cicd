@@ -13,7 +13,7 @@ public class Calculator {
 
     public static long fact(int num){
         if(num < 0){
-            throw new IllegalArgumentException("Factorial is not defined for negative numbers");
+            throw new IllegalArgumentException("Factorial is not defined for negative numbers.");
         }
         if(num > 20){
             throw new IllegalArgumentException("Factorial supported only up to 20 due to overflow.");
